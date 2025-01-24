@@ -36,7 +36,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>io.spring.initializr</groupId>
 			<artifactId>initializr-generator-spring</artifactId>
@@ -50,10 +53,19 @@
 			<artifactId>initializr-web</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.rodmibielli</groupId>
+			<artifactId>initializr-web-spring-boot-starter</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.rodmibielli</groupId>
+			<artifactId>initializr-metadata-spring-boot-starter</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>io.spring.initializr</groupId>
 			<artifactId>initializr-actuator</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>io.spring.start</groupId>
 			<artifactId>start-client</artifactId>
@@ -106,10 +118,12 @@
 				<groupId>io.spring.javaformat</groupId>
 				<artifactId>spring-javaformat-maven-plugin</artifactId>
 			</plugin>
+			<!--
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 			</plugin>
+			-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
