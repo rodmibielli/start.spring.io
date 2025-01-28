@@ -16,6 +16,7 @@ const PROPERTIES_MAPPING_URL = {
   name: 'meta.name',
   description: 'meta.description',
   packageName: 'meta.packageName',
+  dockerizable: 'meta.dockerizable',
   dependencies: 'dependencies',
 }
 
@@ -246,6 +247,7 @@ export const getDefaultValues = json => {
       packaging: get(json, 'packaging.default'),
       packageName: get(json, 'packageName.default'),
       java: get(json, 'javaVersion.default'),
+      dockerizable: get(json,'dockerizable.content'),
     },
     dependencies: [],
   }
@@ -281,6 +283,7 @@ export const getProject = function getProject(url, values, config) {
       packageName: get(values, 'meta.packageName'),
       packaging: get(values, 'meta.packaging'),
       javaVersion: get(values, 'meta.java'),
+      dockerizable: get(values,'meta.dockerizable'),
     })
     let paramsDependencies = get(values, 'dependencies', [])
       .map(dependency => {

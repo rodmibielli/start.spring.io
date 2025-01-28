@@ -31,6 +31,7 @@ describe('COMPLETE action', () => {
           packaging: '',
           packageName: '',
           java: '',
+          dockerizable: ''
         },
         dependencies: [],
       },
@@ -47,7 +48,7 @@ describe('COMPLETE action', () => {
       },
     })
     expect(get(result, 'share')).toBe(
-      'type=maven-project&language=java&platformVersion=2.2.0.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies='
+      'type=maven-project&language=java&platformVersion=2.2.0.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dockerizable=&dependencies='
     )
     expect(get(result, 'values.project')).toBe('maven-project')
     expect(get(result, 'values.language')).toBe('java')

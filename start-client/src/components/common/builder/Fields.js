@@ -7,6 +7,7 @@ import Control from './Control'
 import FieldError from './FieldError'
 import FieldInput from './FieldInput'
 import FieldRadio from './FieldRadio'
+import FieldCheckbox from './FieldCheckbox'
 import Warnings from './Warnings'
 import useWindowsUtils from '../../utils/WindowsUtils'
 import { AppContext } from '../../reducer/App'
@@ -81,7 +82,7 @@ function Fields({
                   />
                 </Control>
               </div>
-            </div>
+           </div>
 
             <Control text='Spring Boot'>
               <Radio
@@ -165,6 +166,14 @@ function Fields({
                 options={get(config, 'lists.meta.java')}
                 onChange={value => {
                   update({ meta: { java: value } })
+                }}
+              />
+              <FieldCheckbox
+                id='input-dockerizable'
+                defaultChecked={get(values,'meta.dockerizable')==='true'}
+                text='Dockerize'
+                onClick={value => {
+                  update({ meta: { dockerizable: value === 'true' } })
                 }}
               />
             </Control>

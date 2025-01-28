@@ -18,6 +18,7 @@ export const defaultInitializrContext = {
       packaging: '',
       packageName: '',
       java: '',
+      dockerizable: '',
     },
     dependencies: [],
   },
@@ -35,6 +36,7 @@ const localStorage =
       }
 
 const getPersistedOrDefault = json => {
+console.log('dockerizable = '+get(json, 'defaultValues.meta').dockerizable);
   const values = {
     project:
       localStorage.getItem('project') || get(json, 'defaultValues').project,
@@ -52,10 +54,12 @@ const getPersistedOrDefault = json => {
         get(json, 'defaultValues.meta').packaging,
       java:
         localStorage.getItem('java') || get(json, 'defaultValues.meta').java,
+      dockerizable:
+        localStorage.getItem('dockerizable') || get(json, 'defaultValues.meta').dockerizable,
     },
     dependencies: [],
   }
-  const checks = ['project', 'language', 'meta.java', 'meta.packaging']
+  const checks = ['project', 'language', 'meta.java', 'meta.packaging','meta.dockerizable']
   checks.forEach(key => {
     const item = get(json, `lists.${key}`)?.find(
       it => it.key === get(values, key)
@@ -79,6 +83,9 @@ const persist = changes => {
   }
   if (get(changes, 'meta.java')) {
     localStorage.setItem('java', get(changes, 'meta.java'))
+  }
+  if (get(changes, 'meta.dockerizable')) {
+    localStorage.setItem('dockerizable', get(changes, 'meta.dockerizable'))
   }
 }
 

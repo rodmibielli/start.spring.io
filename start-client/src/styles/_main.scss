@@ -294,6 +294,7 @@ hr.divider {
     text-align: right;
   }
   input,
+  .checkbox,
   .group-radio {
     margin-left: 1.3rem;
     font-weight: 300;
@@ -310,6 +311,55 @@ hr.divider {
   white-space: nowrap;
   font-weight: 500;
 }
+
+// Checkbox
+
+.checkbox {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $light-color;
+  margin-right: -1.5rem;
+  margin-left: -5px;
+  cursor: pointer;
+  line-height: 18px;
+
+  @include outline;
+  .caret {
+    display: block;
+    content: ' ';
+    width: 12px;
+    height: 12px;
+    background: $light-background;
+    position: absolute;
+    top:  6px;
+    left: 0px;
+    border: 2px solid $light-color;
+    box-shadow: none;
+    outline: none;
+  }
+  &:hover {
+    .caret {
+      border: 2px solid $light-primary;
+    }
+  }
+  &.checked {
+    color: $light-primary;
+    .caret {
+      background: $light-primary;
+      border-color: $light-primary;
+    }
+  }
+  &.err {
+    color: #d60000;
+    cursor: not-allowed;
+    .caret {
+      background: #d60000;
+      border: 2px solid #d60000;
+    }
+  }
+}
+
 
 // Radio
 
