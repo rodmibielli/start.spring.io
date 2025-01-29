@@ -2,7 +2,6 @@ package io.spring.start.site.autoconfigure;
 
 import com.rodmibielli.initializr.metadata.InitializrMetadata;
 import com.rodmibielli.initializr.metadata.InitializrMetadataProvider;
-import com.rodmibielli.initializr.metadata.autoconfigure.InitializrMetadataAutoConfiguration;
 import com.rodmibielli.spring.initializr.web.autoconfigure.InitializrWebAutoConfiguration;
 import io.spring.initializr.metadata.InitializrProperties;
 import io.spring.initializr.web.project.ProjectGenerationInvoker;
@@ -24,7 +23,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties({ExtendedInitializrProperties.class})
 @AutoConfigureBefore({InitializrWebAutoConfiguration.class})
-@AutoConfigureAfter({InitializrMetadataAutoConfiguration.class})
 public class ExtendInitializrAutoConfiguration {
 
     private static final Logger logger = LoggerFactory.getLogger(ExtendInitializrAutoConfiguration.class);
