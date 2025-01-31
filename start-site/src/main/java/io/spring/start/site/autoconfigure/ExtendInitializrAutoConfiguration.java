@@ -1,14 +1,15 @@
 package io.spring.start.site.autoconfigure;
 
 import com.rodmibielli.initializr.metadata.InitializrMetadata;
-import com.rodmibielli.initializr.metadata.InitializrMetadataProvider;
+import com.rodmibielli.initializr.metadata.autoconfigure.InitializrMetadataAutoConfiguration;
 import com.rodmibielli.spring.initializr.web.autoconfigure.InitializrWebAutoConfiguration;
+import io.spring.initializr.metadata.InitializrMetadataProvider;
 import io.spring.initializr.metadata.InitializrProperties;
-import io.spring.initializr.web.project.ProjectGenerationInvoker;
-import io.spring.initializr.web.project.ProjectRequestPlatformVersionTransformer;
+import io.spring.initializr.web.project.*;
 import io.spring.start.site.metadata.DockerizableCapability;
 import io.spring.start.site.metadata.ExtendedInitializrProperties;
 import io.spring.start.site.web.ExtendProjectGenerationController;
+import io.spring.start.site.web.generator.ExtendProjectRequestToDescriptionConverter;
 import io.spring.start.site.web.project.ExtendProjectRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,8 +28,7 @@ public class ExtendInitializrAutoConfiguration {
 
     private static final Logger logger = LoggerFactory.getLogger(ExtendInitializrAutoConfiguration.class);
 
-    /*
-    @Bean("projectGenerationController")
+    @Bean
     ExtendProjectGenerationController projectGenerationController(InitializrMetadataProvider metadataProvider,
                                                                   ObjectProvider<ProjectRequestPlatformVersionTransformer> platformVersionTransformer,
                                                                   ApplicationContext applicationContext) {
@@ -39,12 +39,10 @@ public class ExtendInitializrAutoConfiguration {
                 platformVersionTransformer.getIfAvailable(DefaultProjectRequestPlatformVersionTransformer::new));
 
         ProjectGenerationInvoker<ExtendProjectRequest> projectGenerationInvoker = new ProjectGenerationInvoker<>(
-                applicationContext, null);
+                applicationContext, converter);
 
         return new ExtendProjectGenerationController(metadataProvider, projectGenerationInvoker);
     }
-
-     */
 
     @Bean
     public InitializrMetadata initializrMetadata(InitializrProperties initializrProperties,

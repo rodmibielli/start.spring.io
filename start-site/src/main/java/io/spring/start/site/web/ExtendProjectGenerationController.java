@@ -1,6 +1,6 @@
 package io.spring.start.site.web;
 
-import com.rodmibielli.initializr.metadata.InitializrMetadataProvider;
+import io.spring.initializr.metadata.InitializrMetadataProvider;
 import io.spring.initializr.web.controller.ProjectGenerationController;
 import io.spring.initializr.web.project.ProjectGenerationInvoker;
 import io.spring.start.site.web.project.ExtendProjectRequest;
