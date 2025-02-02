@@ -27,6 +27,10 @@
 	<artifactId>start-site</artifactId>
 	<name>start.spring.io website</name>
 
+	<properties>
+		<rodmibielli.extension.version>0.0.1-SNAPSHOT</rodmibielli.extension.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -61,6 +65,11 @@
 			<groupId>com.rodmibielli</groupId>
 			<artifactId>initializr-metadata-spring-boot-starter</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.rodmibielli</groupId>
+			<artifactId>initializr-generator-spring-openai</artifactId>
+			<version>${rodmibielli.extension.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.spring.initializr</groupId>
@@ -135,7 +144,7 @@
 						</goals>
 						<configuration>
 							<additionalProperties>
-								<versions.spring-boot>${project.parent.parent.version}</versions.spring-boot>
+								<versions.spring-boot>${project.parent.version}</versions.spring-boot>
 								<versions.initializr>${spring-initializr.version}</versions.initializr>
 							</additionalProperties>
 						</configuration>

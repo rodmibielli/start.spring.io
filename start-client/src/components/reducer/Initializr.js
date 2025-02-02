@@ -36,7 +36,6 @@ const localStorage =
       }
 
 const getPersistedOrDefault = json => {
-console.log('dockerizable = '+get(json, 'defaultValues.meta').dockerizable);
   const values = {
     project:
       localStorage.getItem('project') || get(json, 'defaultValues').project,
