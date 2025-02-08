@@ -29,6 +29,7 @@
 
 	<properties>
 		<rodmibielli.extension.version>0.0.1-SNAPSHOT</rodmibielli.extension.version>
+		<aspectj.version>1.9.22.1</aspectj.version>
 	</properties>
 
 	<dependencies>
@@ -118,6 +119,16 @@
 			<artifactId>test-support</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -136,6 +147,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<jvmArguments>
+						--add-opens java.base/java.lang=ALL-UNNAMED
+						-javaagent:"${settings.localRepository}"/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+					</jvmArguments>
+				</configuration>
 				<executions>
 					<execution>
 						<id>build-info</id>
