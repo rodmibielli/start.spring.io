@@ -56,28 +56,28 @@ initializr:
         versionProperty: netflix-dgs.version
         mappings:
           - compatibilityRange: "[3.3.0,3.5.0-M1)"
-            version: 10.0.1
+            version: 10.0.3
       sentry:
         groupId: io.sentry
         artifactId: sentry-bom
         versionProperty: sentry.version
         mappings:
-          - compatibilityRange: "[3.3.0,3.3.0-M1)"
-            version: 7.14.0
+          - compatibilityRange: "[3.3.0,3.5.0-M1)"
+            version: 8.1.0
       solace-spring-boot:
         groupId: com.solace.spring.boot
         artifactId: solace-spring-boot-bom
         versionProperty: solace-spring-boot.version
         mappings:
-          - compatibilityRange: "[3.3.0,3.4.0-M1)"
+          - compatibilityRange: "[3.3.0,3.5.0-M1)"
             version: 2.2.0
       solace-spring-cloud:
         groupId: com.solace.spring.cloud
         artifactId: solace-spring-cloud-bom
         versionProperty: solace-spring-cloud.version
         mappings:
-          - compatibilityRange: "[3.3.0,3.4.0-M1)"
-            version: 4.6.0
+          - compatibilityRange: "[3.3.0,3.5.0-M1)"
+            version: 4.7.0
       spring-ai:
         groupId: org.springframework.ai
         artifactId: spring-ai-bom
@@ -85,7 +85,6 @@ initializr:
         mappings:
           - compatibilityRange: "[3.3.0,3.5.0-M1)"
             version: 1.0.0-M5
-            repositories: spring-milestones
       spring-cloud:
         groupId: org.springframework.cloud
         artifactId: spring-cloud-dependencies
@@ -96,10 +95,10 @@ initializr:
             version: 2023.0.5
           - compatibilityRange: "[3.4.0,3.5.0-M1)"
             version: 2024.0.0
-          - compatibilityRange: "[3.5.0-SNAPSHOT,3.6.0-M1)"
-            version: 2025.0.0-SNAPSHOT
+          - compatibilityRange: "[3.5.0-M1,3.6.0-M1)"
+            version: 2025.0.0-M1
             repositories:
-              - spring-snapshots
+              - spring-milestones
       spring-cloud-azure:
         groupId: com.azure.spring
         artifactId: spring-cloud-azure-dependencies
@@ -114,7 +113,9 @@ initializr:
         additionalBoms: [ spring-cloud ]
         mappings:
           - compatibilityRange: "[3.3.0,3.4.0-M1)"
-            version: 5.10.0
+            version: 5.11.0
+          - compatibilityRange: "[3.4.0,3.5.0-M1)"
+            version: 6.0.0
       spring-cloud-services:
         groupId: io.pivotal.spring.cloud
         artifactId: spring-cloud-services-dependencies
@@ -159,9 +160,9 @@ initializr:
         versionProperty: vaadin.version
         mappings:
           - compatibilityRange: "[3.3.0,3.4.0-M1)"
-            version: 24.5.10
+            version: 24.5.11
           - compatibilityRange: "[3.4.0,3.5.0-M1)"
-            version: 24.6.2
+            version: 24.6.4
     platform:
       compatibilityRange: "3.3.0"
   dependencies:
@@ -845,7 +846,7 @@ initializr:
         - name: Solace PubSub+
           bom: solace-spring-boot
           id: solace
-          compatibilityRange: "[3.3.0,3.4.0-M1)"
+          compatibilityRange: "[3.3.0,3.5.0-M1)"
           description: Connect to a Solace PubSub+ Advanced Event Broker to publish, subscribe, request/reply and store/replay messages
           groupId: com.solace.spring.boot
           artifactId: solace-spring-boot-starter
@@ -963,7 +964,7 @@ initializr:
           id: sentry
           bom: sentry
           description: Application performance monitoring and error tracking that help software teams see clearer, solve quicker, and learn continuously.
-          compatibilityRange: "[3.3.0,3.3.0-M1)"
+          compatibilityRange: "[3.3.0,3.5.0-M1)"
           groupId: io.sentry
           artifactId: sentry-spring-boot-starter-jakarta
           links:
@@ -1247,7 +1248,7 @@ initializr:
             - compatibility-range: "[3.3.0,3.5.0-M1)"
               groupId: org.springframework.cloud
               artifactId: spring-cloud-starter-gateway-mvc
-            - compatibility-range: "[3.5.0-SNAPSHOT,3.6.0-M1)"
+            - compatibility-range: "[3.5.0-M1,3.6.0-M1)"
               groupId: org.springframework.cloud
               artifactId: spring-cloud-starter-gateway-server-webmvc
           description: Provides a simple, yet effective way to route to APIs in Servlet-based applications. Provides cross-cutting concerns to those APIs such as security, monitoring/metrics, and resiliency.
@@ -1260,7 +1261,7 @@ initializr:
             - compatibility-range: "[3.3.0,3.5.0-M1)"
               groupId: org.springframework.cloud
               artifactId: spring-cloud-starter-gateway
-            - compatibility-range: "[3.5.0-SNAPSHOT,3.6.0-M1)"
+            - compatibility-range: "[3.5.0-M1,3.6.0-M1)"
               groupId: org.springframework.cloud
               artifactId: spring-cloud-starter-gateway-server-webflux
           description: Provides a simple, yet effective way to route to APIs in reactive applications. Provides cross-cutting concerns to those APIs such as security, monitoring/metrics, and resiliency.
@@ -1426,7 +1427,7 @@ initializr:
               description: Azure Storage Sample
     - name: Google Cloud
       bom: spring-cloud-gcp
-      compatibilityRange: "[3.3.0,3.4.0-M1)"
+      compatibilityRange: "[3.3.0,3.5.0-M1)"
       content:
         - name: Google Cloud Support
           id: cloud-gcp
